@@ -1,8 +1,6 @@
 """
 Simple script that sets watermark and resizes image to the given percentage.
 
-Usage:
-
 """
 
 import sys
