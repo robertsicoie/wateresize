@@ -4,7 +4,6 @@ Simple script that sets watermark and resizes image to the given percentage.
 """
 
 import sys
-# TODO import argparse
 from os import listdir, mkdir
 from os.path import isfile, join, exists, exists
 from wand.image import Image
@@ -24,9 +23,9 @@ def check_in_path(path):
 # =============================== 
 def create_out_path(out):
     if not exists(out):
-        print "Creating directory {0}.".format(out)
+        print("Creating directory {0}.".format(out))
         mkdir(out)
-        print "Created directory {0}.".format(out)
+        print("Created directory {0}.".format(out))
     return out
 
 # ===============================
@@ -50,7 +49,7 @@ def orientation(img):
 # =============================== 
 def watermark_position(img, watermark):
     orient = orientation(img)
-    print "orientation = {0}".format(orient)
+    print("orientation = {0}".format(orient))
     if (orient == "8"):
         img.rotate(-90)
         set_watermark(img, watermark)
@@ -83,30 +82,30 @@ args = parser.parse_args()
 # Checks
 in_path = check_in_path(args.i)
 out_path = create_out_path(args.o)
-resize_value = check_resize_value(args.r)
+resize_value = check_resize_value(int(args.r))
 resize_v = int(args.r)
 if args.w:
     watermark = Image(filename=args.w)
 
 # Run
-print "Resizing all files from {0}. Output to {1}".format(in_path, out_path)
+print("Resizing all files from {0}. Output to {1}".format(in_path, out_path))
 for f in listdir(in_path):
     filename=join(in_path, f)
     if isfile(filename):
-        print "---\n" + filename
+        print("---\n" + filename)
         try:
             with Image(filename=filename) as img:
-                print "Size before {0}.".format(img.size)
+                print("Size before {0}.".format(img.size))
                 if args.r:
                     img.transform(resize = resize_value)
                 if args.w:
                     watermark_position(img, watermark) 
                 img.save(filename = out_path + "/" + f)
-                print "Size after {0}.".format(img.size)
+                print("Size after {0}.".format(img.size))
         except Exception as e:
-            print "Image processing error:", e
+            print("Image processing error:", e)
 
-print "Finished processing images."
+print("Finished processing images.")
 """
 END
 """

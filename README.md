@@ -40,3 +40,11 @@ $ sudo apt-get install pip-python
 $ sudo pip install wand
 ```
 
+*Windows*
+Install python.
+Install [ImageMagic](https://www.imagemagick.org "ImageMagic").
+Install [Wand](http://docs.wand-py.org/). Open cmd, run
+```
+pip install Wand
+```
+
