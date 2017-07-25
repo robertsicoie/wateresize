@@ -41,10 +41,21 @@ $ sudo pip install wand
 ```
 
 *Windows*
-Install python.
-Install [ImageMagic](https://www.imagemagick.org "ImageMagic").
-Install [Wand](http://docs.wand-py.org/). Open cmd, run
+ - Install python.
+ - Install [ImageMagic](https://www.imagemagick.org "ImageMagic").
+ - Install [Wand](http://docs.wand-py.org/). Open cmd, run
 ```
 pip install Wand
 ```
+## Docker
+Here are the steps to build and run the script from within a docker container:
+ - Install docker
+ - Build the docker container
+```
+docker build -t "wateresize" .
+```
+ - Run the docker container. You have to map the photos directory on your computer to a directory inside the container. For example you can map your /home/robert/Pictures home directory to /home/Pictures on the docker container.
 
+```
+docker run -v /home/robert/Pictures:/home/Pictures -t -i  wateresize
+``` 
