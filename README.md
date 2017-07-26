@@ -1,6 +1,6 @@
 # wateresize 
 
-Take all photos from a the input directory, resize and set watermark on each photo and write it to the output directory. The input directory remains unchanged.
+Take all photos from an input directory, resize and set watermark on each photo and write it to the output directory. The input directory remains unchanged.
 
 ## Usage
 Show help message:
@@ -35,9 +35,9 @@ $ python wateresize.py -w ~/Pictures/watermark/logo.png -i ~/Pictures/my_photos/
 ## Setup
 *Ubuntu*
 ``` 
-$ sudo apt-get install python
-$ sudo apt-get install pip-python
-$ sudo pip install wand
+sudo apt-get install python
+sudo apt-get install pip-python
+sudo pip install wand
 ```
 
 *Windows*
@@ -47,9 +47,8 @@ $ sudo pip install wand
 ```
 pip install Wand
 ```
-## Docker
-Here are the steps to build and run the script from within a docker container:
- - Install docker
+*Docker*
+ - Install docker on your host
  - Build the docker container
 ```
 docker build -t "wateresize" .
