@@ -41,8 +41,8 @@ $ sudo pip install wand
 ```
 
 *Windows*
- - Install python.
- - Install [ImageMagic](https://www.imagemagick.org "ImageMagic").
+ - Install python. Known working version: 3.6.2
+ - Install [ImageMagic](https://www.imagemagick.org "ImageMagic"). Known working version: 6.9.9.3 Q8 x64. You may need to set MAGICK_HOME variable.
  - Install [Wand](http://docs.wand-py.org/). Open cmd, run
 ```
 pip install Wand
