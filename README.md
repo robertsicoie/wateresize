@@ -36,7 +36,7 @@ $ python wateresize.py -w ~/Pictures/watermark/logo.png -i ~/Pictures/my_photos/
 *Ubuntu*
 ``` 
 sudo apt-get install python
-sudo apt-get install pip-python
+sudo apt-get install python-pip
 sudo pip install wand
 ```
 
